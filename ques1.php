@@ -22,13 +22,13 @@ $CCCN = isset($_GET["CCCN"]) ? $_GET["CCCN"] : '';
 
 if (isset($_GET["submit"]) && $_GET["submit"] == "Thêm") {
     if ($MaKH && $TenKH && $SDT && $CCCN) {
-        $sql = "INSERT INTO khachhang (MaKH, TenKH, SDT, CCCN) VALUES ('$MaKH', '$TenKH', '$SDT', '$CCCN')";}
-    //     if ($conn->query($sql) == TRUE) {
-    //         echo "Thêm thành công";
-    //     } else {
-    //         echo "Thêm thất bại: " . $conn->error;
-    //     }
-    // } else {
-    //     echo "Vui lòng nhập đầy đủ thông tin";
-    // }
+        $sql = "INSERT INTO khachhang (MaKH, TenKH, SDT, CCCN) VALUES ('$MaKH', '$TenKH', '$SDT', '$CCCN')";
+        if ($conn->query($sql) == TRUE) {
+            echo "Thêm thành công";
+        } else {
+            echo "Thêm thất bại: " . $conn->error;
+        }
+    } else {
+        echo "Vui lòng nhập đầy đủ thông tin";
+    }
 }
