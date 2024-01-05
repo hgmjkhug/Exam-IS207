@@ -19,7 +19,7 @@
             <td><input type="text" name="CCCN"></td>
         </tr>
     </table>
-    <button id="Submit" value="Thêm">Them</button>
+    <button id="Submit" value="Thêm">Thêm</button>
 </form>
 <div id="iddiv"></div>
 </body>
