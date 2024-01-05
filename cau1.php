@@ -7,7 +7,7 @@
             <td><input type="text" name="MaKH"></td>
         </tr>
         <tr>
-            <td>Tên khách hàng</td>
+            <td>Họ và Tên khách hàng</td>
             <td><input type="text" name="TenKH"></td>
         </tr>
         <tr>
