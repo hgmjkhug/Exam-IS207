@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset Button Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<!-- Input fields for information -->
+<label for="name">Name:</label>
+<input type="text" id="name" />
+
+<label for="email">Email:</label>
+<input type="text" id="email" />
+
+<!-- Reset button to clear the information -->
+<button id="resetButton">Reset</button>
+
+<script>
+  // Wait for the document to be ready
+  $(document).ready(function() {
+    // Attach a click event to the "Reset" button
+    $("#resetButton").click(function() {
+      // Clear the values of the input fields
+      $("#name").val('');
+      $("#email").val('');
+    });
+  });
+</script>
+
+</body>
+</html>
