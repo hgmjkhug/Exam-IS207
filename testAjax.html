@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX Example with jQuery and Database</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<!-- Display area for database response -->
+<div id="result">Database response will be displayed here.</div>
+
+<!-- Button to trigger the AJAX request -->
+<button id="getData">Get Data from Database</button>
+
+<!-- jQuery script to handle the AJAX request -->
+<script>
+  // Wait for the document to be ready
+  $(document).ready(function() {
+    // Attach a click event to the "Get Data" button
+    $("#getData").click(function() {
+      // Perform an AJAX GET request to the server
+      $.ajax({
+        // Specify the server-side script URL that connects to the database
+        url: "server.php", // Replace with the actual server-side script path
+        method: "GET",
+        dataType: "json",
+        success: function(response) {
+          // Check if 'data' key exists in the response
+          if (response.hasOwnProperty('data')) {
+            // Extract the 'data' array
+            var data = response.data;
+
+            // Build an HTML string with the received data
+            var htmlString = "<strong>Database Response:</strong><ul>";
+
+            // Iterate through the data array and create list items
+            for (var i = 0; i < data.length; i++) {
+              htmlString += "<li>" + data[i].TenKH + "</li>";
+            }
+
+            // Close the unordered list tag
+            htmlString += "</ul>";
+
+            // Update the content of the result div with the generated HTML
+            $("#result").html(htmlString);
+          } else {
+            // Handle the case where 'data' key is missing
+            $("#result").html("<strong>Error:</strong> 'data' key not found in the response.");
+          }
+        },
+        error: function(xhr, status, error) {
+          // Handle errors, if any
+          console.error("Error: " + status + " - " + error);
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -42,10 +42,10 @@ if (isset($_POST["submit"]) && $_POST["submit"] == "Thêm") {
     if ($TenKH && $MaHD && $TenHD && $TongTien) {
         // Retrieve MaKH based on the selected TenKH
         $getMaKHQuery = "SELECT MaKH FROM khachhang WHERE TenKH = '$TenKH'";
-        $maKhResult = $conn->query($getMaKHQuery);
+        $MaKHResult = $conn->query($getMaKHQuery);
 
-        if ($maKhResult && $maKhResult->num_rows > 0) {
-            $maKhRow = $maKhResult->fetch_assoc();
+        if ($MaKHResult && $MaKHResult->num_rows > 0) {
+            $maKhRow = $MaKHResult->fetch_assoc();
             $MaKH = $maKhRow['MaKH'];
 
             // Insert into hoadon table
@@ -61,7 +61,7 @@ if (isset($_POST["submit"]) && $_POST["submit"] == "Thêm") {
         }
 
         // Free the result set
-        $maKhResult->free_result();
+        $MaKHResult->free_result();
     } else {
         echo "Vui lòng nhập đầy đủ thông tin";
     }

@@ -18,7 +18,7 @@ include("conn.php");
     } ?>
 </select><br>
 <?php
-echo "Danh sách các phòng còn trống<br>";
+echo "<b>Danh sách các phòng còn trống</b><br>";
 echo "<table border='1' cellspacing='0' cellpadding='10'>";
 echo "<tr>
 <th>
@@ -36,18 +36,50 @@ echo "<tr>
 </tr>";
 echo "<tr>
 <td>
-    a
+    
 </td>
 <td>
-    d
+    
 </td>
 <td>
-    f
+    
 </td>
 <td>
-    <button onclick=handleDelBtn() name='add' value='Thêm'>Thêm</button>
+    <button onclick=handleAddBtn() name='add' value='Thêm'>Thêm</button>
 </td>
 </tr>";
+echo "</table>";
+echo "<b>Danh sách các phòng đã thêm</b><br>";
+echo "<table border='1' cellspacing='0' cellpadding='10'>";
+echo "<tr>
+<th>
+    STT
+</th>
+<th>
+    Mã phòng
+</th>
+<th>
+    Tên phòng
+</th>
+<th>
+    Chức năng
+</th>
+</tr>";
+echo "<tr>
+<td>
+    
+</td>
+<td>
+    
+</td>
+<td>
+
+</td>
+<td>
+    <button onclick=handleDelBtn() name='del' value='Xóa'>Xóa</button>
+</td>
+</tr>";
+echo "</table>";
 ?>
 <script>
     function handleDelBtn() {
